@@ -4,7 +4,7 @@
   "parameters": {
     "javaPackageName": {
       "type": "string",
-      "defaultValue": "openjdk-13-jdk",
+      "defaultValue": "openjdk-11-jdk",
       "allowedValues": [
         "openjdk-11-jdk",
         "openjdk-12-jdk",
