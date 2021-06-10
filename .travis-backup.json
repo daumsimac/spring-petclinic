@@ -1,0 +1,45 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-18.04
+
+stages:
+  - stage: Build
+    displayName: Build Stage
+    jobs:
+      - job: Build
+        displayName: Build Maven Project
+        steps:
+          - task: Maven@3
+            displayName: 'Maven Package'
+            inputs:
+              mavenPomFile: 'pom.xml'
+          - task: CopyFiles@2
+            displayName: 'Copy Files to artifact staging directory'
+            inputs:
+              SourceFolder: '$(System.DefaultWorkingDirectory)'
+              Contents: '**/target/*.?(war|jar)'
+              TargetFolder: $(Build.ArtifactStagingDirectory)
+          - upload: $(Build.ArtifactStagingDirectory)
+            artifact: drop
+
+  - stage: Deploy
+    displayName: DeployOnVM
+    jobs:
+    - deployment: VMDeploy
+      displayName: web
+      environment:
+        name: TomcatEnv
+        resourceType: VirtualMachine
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+            - bash: echo "Starting deployment script run"
+            - bash: sudo cp $(Pipeline.Workspace)/drop/target/*.war /var/lib/tomcat9/webapps/
