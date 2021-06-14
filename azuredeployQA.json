@@ -151,7 +151,7 @@
           {
             "name": "default-allow-8080",
             "properties": {
-              "priority": 1010,
+              "priority": 112,
               "access": "Allow",
               "direction": "Inbound",
               "destinationPortRange": "8080",
