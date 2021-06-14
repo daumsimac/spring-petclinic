@@ -147,7 +147,21 @@
               "sourcePortRange": "*",
               "destinationAddressPrefix": "*"
             }
-          }
+          },
+          {
+            "name": "Web",
+            "properties": {
+              "description": "Allow Web",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "8080",
+              "sourceAddressPrefix": "Internet",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 112,
+              "direction": "Inbound"
+            }
+          },
         ]
       }
     },
