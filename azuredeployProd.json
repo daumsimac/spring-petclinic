@@ -149,7 +149,7 @@
             }
           },
           {
-            "name": "Web",
+            "name": "default-allow-8080",
             "properties": {
               "description": "Allow Web",
               "protocol": "Tcp",
