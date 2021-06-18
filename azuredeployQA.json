@@ -97,7 +97,7 @@
     "nsgName": "myNSGQA",
     "vmName": "TomcatQA",
     "addressPrefix": "10.0.0.0/16",
-    "subnetName": "Subnet",
+    "subnetName": "SubnetQA",
     "subnetPrefix": "10.0.0.0/24",
     "publicIPAddressName": "myPublicIPQA",
     "virtualNetworkName": "MyVNETQA",
@@ -112,7 +112,7 @@
         ]
       }
     },
-    "networkSecurityGroupName": "default-NSG"
+    "networkSecurityGroupName": "default-NSG-QA"
   },
   "resources": [
     {
@@ -151,14 +151,15 @@
           {
             "name": "default-allow-8080",
             "properties": {
-              "priority": 112,
-              "access": "Allow",
-              "direction": "Inbound",
-              "destinationPortRange": "8080",
+              "description": "Allow Web",
               "protocol": "Tcp",
-              "sourceAddressPrefix": "*",
               "sourcePortRange": "*",
-              "destinationAddressPrefix": "*"
+              "destinationPortRange": "8080",
+              "sourceAddressPrefix": "Internet",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 112,
+              "direction": "Inbound"
             }
           }
         ]
