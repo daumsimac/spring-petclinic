@@ -93,14 +93,14 @@
   "variables": {
     "imagePublisher": "Canonical",
     "imageOffer": "UbuntuServer",
-    "nicName": "myVMNicDev",
-    "nsgName": "myNSGDev",
-    "vmName": "TomcatDev",
+    "nicName": "myVMNicDev01",
+    "nsgName": "myNSGDev01",
+    "vmName": "TomcatDev01",
     "addressPrefix": "10.0.0.0/16",
-    "subnetName": "Subnet",
+    "subnetName": "Subnet01",
     "subnetPrefix": "10.0.0.0/24",
-    "publicIPAddressName": "myPublicIPDev",
-    "virtualNetworkName": "MyVNETDev",
+    "publicIPAddressName": "myPublicIPDev01",
+    "virtualNetworkName": "MyVNETDev01",
     "linuxConfiguration": {
       "disablePasswordAuthentication": true,
       "ssh": {
@@ -112,7 +112,7 @@
         ]
       }
     },
-    "networkSecurityGroupName": "Pipe-NSG-Dev"
+    "networkSecurityGroupName": "Pipe-NSG-Dev01"
   },
   "resources": [
     {
