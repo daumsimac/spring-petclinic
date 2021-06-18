@@ -99,7 +99,7 @@
     "addressPrefix": "10.0.0.0/16",
     "subnetName": "Subnet02",
     "subnetPrefix": "10.0.0.0/24",
-    "publicIPAddressName": "myPublicIPDev01",
+    "publicIPAddressName": "myPublicIPDev02",
     "virtualNetworkName": "MyVNETDev02",
     "linuxConfiguration": {
       "disablePasswordAuthentication": true,
