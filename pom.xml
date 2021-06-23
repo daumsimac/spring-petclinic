@@ -122,7 +122,6 @@
   </dependencies>
 
   <build>
-    <finalName>petclinic</finalName>
     <plugins>
       <plugin>
         <groupId>io.spring.javaformat</groupId>
@@ -269,6 +268,7 @@
         </dependencies>
       </plugin>
     </plugins>
+    <finalName>petclinic</finalName>
   </build>
 
   <licenses>
